@@ -6,8 +6,12 @@
 </head>
 <body>
 <div th:each="student: ${students}">
-    <h2 th:text="${student.name}"></h2>
-    <h6 th:inline="text"> is majoring in [[${student.major}]].</h6>
+    <h2 th:inline="text">
+        [[${student.name}]] is majoring in [[${student.major}]].
+    </h2>
+    <h3>
+        Courses enrolled:
+    </h3>
     <ul>
         <th:block   th:each="course : ${student.courses}">
         <li th:inline="text"><b>[[${course.title}]]</b> taught by [[${course.instructor}]].</li>
